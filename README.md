@@ -1,7 +1,7 @@
 # Internship Learning Journal  
 **Name:** Your Name  
 **USN:** YOUR USN
-**GitHub Username:** _____________
+**GitHub Username:** Your GitHub Username  
 **Department:** (CSE-AIML / CSE / ISE)  
 **Internship Start Date:** 03-02-2026
 
@@ -62,7 +62,7 @@ Course Link: https://tds.s-anand.net/#/
 ---
 
 
-## Remove this line after Reading
+## Remove below lines after Reading
 ## 📎 Repository Submission
 This repository link is shared with the trainers for progress tracking.
 
