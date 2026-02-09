@@ -1,8 +1,8 @@
 # Internship Learning Journal  
-**Name:** Your Name  
-**USN:** YOUR USN
-**GitHub Username:** Your GitHub Username  
-**Department:** (CSE-AIML / CSE / ISE)  
+**Name:** DEEPAK MISAL 
+**USN:** 2BL22CI016
+**GitHub Username:** deepakmisal24  
+**Department:** CSE-AIML 
 **Internship Start Date:** 03-02-2026
 
 ---
