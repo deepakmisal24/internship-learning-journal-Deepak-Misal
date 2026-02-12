@@ -1,5 +1,5 @@
-# Session 1: Environment Setup
-
+# **WSL & Ubuntu Environment Setup**
+**Chapter 1 | Week 1 | Session 1**
 ## 🐧 WSL (Windows Subsystem for Linux)
 **WSL** is a tool used to run a Linux environment directly on Windows without the overhead of a traditional virtual machine.
 
@@ -67,3 +67,39 @@ In this session, I successfully bridged my Windows host with a Linux environment
 * [x] **Access:** Launched the Ubuntu shell directly from the Windows Terminal.
 * [x] **System Maintenance:** Performed the first crucial update of the Linux environment using:
   ```  sudo apt update && sudo apt upgrade ```
+   
+---
+
+# 🛠️ Session 2: Hypervisor Deep Dive & Git Basics
+**Chapter 1 | Week 1 | Session 2**
+
+This session explores the technical "why" behind **WSL 2**, its architectural advantages over traditional Virtual Machines, and the core principles of **Version Control Systems (VCS)**.
+
+---
+
+## 🐙 Introduction to Version Control (Git)
+The video introduces **Git** as an "Undo" button for developers that persists even after closing the editor. Unlike standard undo functions, Git allows you to track changes across weeks or months of work.
+
+### **The Git Lifecycle**
+To manage your code effectively, you follow a specific lifecycle:
+
+* **Initialize (`git init`):** Creates a hidden `.git` folder in your directory to start tracking history.
+* **Checkpoints (Commits):** These act as "save-points" in a game. If you break your code, you can "teleport" back to a previous commit (checkpoint).
+---
+### **Key concepts**
+* **Git:** The local software installed in your WSL/Ubuntu environment that manages your history.
+* **GitHub:** The cloud website (like a specialized Google Drive) where you "push" your local history for backup and collaboration.
+* **Deployment:** It is the process of moving code from GitHub to a live server for user access.
+* **CI/CD:** CI/CD provides the "automation" layer connecting GitHub to your final deployment.
+
+---
+
+## 📊 Summary of the Flow
+
+1.  **Code:** Write code in your **WSL Ubuntu terminal** (Local).
+2.  **Commit:** Save snapshots locally using **Git**.
+3.  **Push:** Send the local history to **GitHub**.
+4.  **Test:** **GitHub Actions (CI)** automatically runs tests.
+5.  **Deploy:** **Deployment (CD)** updates your live website or API automatically.
+
+---

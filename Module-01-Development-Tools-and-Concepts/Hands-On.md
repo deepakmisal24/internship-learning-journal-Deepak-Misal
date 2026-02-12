@@ -80,3 +80,99 @@ Syntax: wsl -d <DistributionName>
 **Conclusion:** The environment is successfully bridged.
 
 ---
+
+# 🛠️ Hands-On: Git Setup & GitHub Deployment
+**Chapter 1 | Week 1 | Session 2**
+
+This guide documents the practical steps taken to install Git within the WSL environment and the workflow used to push local projects to a remote GitHub repository.
+
+---
+
+## 🏗️ Part 1: Installing Git in the Local System (WSL)
+
+Since development for this course happens in the Linux subsystem, Git must be installed directly within the Ubuntu environment to interface correctly with the project files.
+
+### **1. Install Git inside Ubuntu (WSL)**
+Open your Ubuntu terminal and execute the following commands to ensure the package manager is current and Git is installed:
+
+```bash
+# Update your package list
+sudo apt update
+
+# Install Git
+sudo apt install git -y
+
+# Verify the installation
+git --version
+```
+
+### **2. Configure your Git Identity**
+Git requires a registered identity to label "save-points" (commits). This information is attached to every change you make.
+
+```bash
+# Set global configuration
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+```
+
+### **3. Initialize Git in your Project**
+Once the environment is configured, initialize the tracking engine within your specific project folder:
+
+1. Open your project folder in **VS Code** (`File > Open Folder`).
+2. Open the **Integrated Terminal** .
+3. Run the initialization command:
+
+```bash
+# Creates the hidden .git directory to start tracking your files
+git init
+```
+
+---
+## 🚀 Part 2: Pushing to GitHub
+After initializing the local repository, follow these steps to upload your code to the cloud.
+
+### **1. Prepare Your Local Files**
+Record your changes officially in the local repository history.
+
+
+
+```bash
+# 1. Initialize Git (only required once per project)
+git init
+
+# 2. Stage your files (move them to the "Staging Area")
+git add .
+
+# 3. Commit your changes (create a permanent snapshot)
+git commit -m "Your descriptive message here"
+```
+### **2. Create the Bridge to GitHub**
+To connect your local repository to a remote server, you must link it to a specific GitHub URL and name that link **"origin"**.
+
+1. Create a new repository on **GitHub**.
+2. Copy the URL (e.g., `https://github.com/username/repo.git`).
+3. Run the following in your terminal:
+
+
+
+```bash
+# Link the local folder to the remote URL example
+git remote add origin [https://github.com/deepakmisal24/internship-learning-journal-Deepak-Misal.git](https://github.com/deepakmisal24/internship-learning-journal-Deepak-Misal.git)
+```
+
+### **3. The Final Push**
+Upload your local commits to the remote "origin" server on the "main" branch.
+
+
+
+```bash
+# Use the -u flag the first time to track the remote branch
+git push -u origin main
+```
+
+### **Key Terms**
+
+* **Origin:** The conventional nickname for your remote GitHub URL.
+* **Main:** The default name of your primary development branch.
+
+---
