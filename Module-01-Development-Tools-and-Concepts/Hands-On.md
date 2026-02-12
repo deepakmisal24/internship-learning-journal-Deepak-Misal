@@ -176,3 +176,92 @@ git push -u origin main
 * **Main:** The default name of your primary development branch.
 
 ---
+
+# 🛠️ Hands-On: UV installation and gemini api setup
+**Chapter 1 | Week 1 | Session 3**
+
+This practical session covers the installation of the UV package manager, setting up the LLM CLI tool, and authenticating with Google's Gemini to enable AI capabilities directly within your WSL/Ubuntu environment.
+
+---
+
+## 🏗️ Part 1: UV & LLM Tool Installation
+
+**UV** is an extremely fast Python package installer and resolver, written in Rust, designed to replace `pip`. We use it here to manage our AI command-line tools.
+
+
+
+### **1. Install UV**
+Open your Ubuntu terminal and install UV using the official standalone script:
+
+```bash
+# Install UV via the curl script
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+Then close the current terminal and reopen ubuntu terminal
+```bash
+#To check whether UV has been installed properly
+uv --version
+```
+
+
+### **2. Manage the LLM Tool**
+Once UV is installed, use it to install the `llm` tool. This tool acts as a universal interface for various AI models.
+
+
+
+**Install:**
+```bash
+uv tool install llm
+```
+
+**Uninstall:(If needed)**
+```bash
+uv tool uninstall llm
+```
+
+### **3. Add the Gemini Plugin**
+By default, the `llm` tool needs a plugin to communicate with Google’s Gemini models.
+
+```bash
+# This plugin enables the LLM tool to interface with Google's API
+llm install llm-gemini
+```
+
+---
+
+## 🔑 Part 2: Gemini API Setup
+To use Gemini, you must provide a unique API key so Google can authenticate your requests.
+
+### **1. Generate Your Key**
+1. Visit **[Google AI Studio](https://aistudio.google.com/welcome)**.
+2. Sign in with a personal Gmail account
+3. Click on **"Create API key"**.
+4. Select a project (or create a new one) and click **"Generate API key"**.
+5. **Copy** the generated key to your clipboard.
+
+### **2. Configure the Key in Ubuntu**
+Return to your Ubuntu terminal to securely store the key. Git/LLM handles this by storing it in a local configuration file.
+
+
+1. Type the following command:
+```bash
+llm keys set gemini
+```
+
+2. When prompted, **paste** your API key. 
+
+> [!IMPORTANT]
+> **Note:** The cursor will not move, and the key will not be visible as you paste it for security reasons. Just paste and press **Enter**.
+
+---
+
+## ✅ Part 3: Verification
+Your Gemini API is now configured! You can test it by asking a question directly from the command line:
+
+
+
+```bash
+# Running a test query to verify authentication
+llm -m gemini-2.5-flash "Hello, how are you?"
+```
+---

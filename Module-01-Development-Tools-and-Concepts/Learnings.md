@@ -103,3 +103,31 @@ To manage your code effectively, you follow a specific lifecycle:
 5.  **Deploy:** **Deployment (CD)** updates your live website or API automatically.
 
 ---
+
+# 🛠️ Session 3: Hypervisors, path, UV, LLM and API keys
+**Chapter 1 | Week 1 | Session 3**
+
+This session bridges the gap between your local computer and the cloud by establishing a robust AI development environment.
+
+---
+
+* **Hypervisor:** A "building manager" software that lets you run multiple operating systems (like Windows and Linux) on the same physical computer simultaneously.
+![Hypervisor flowchart](hypervisor.png)
+    
+* **Absolute and Relative Path:** An **Absolute Path** is a full "mailing address" from the root (`/`), while a **Relative Path** is "local directions" based on where you are currently standing.
+    
+* **Ubuntu Commands:** `ls` lists files, `vi` opens a text editor, `touch` creates a new empty file, and `cd` moves you between folders.
+
+* **Mounting (/mnt):** The process of building a "bridge" to make external drives or Windows files accessible as a folder within the Linux system.
+    
+* **./ (Current Dir):** A shortcut that represents exactly where you are currently located in the file system.
+* **../ (Prev Dir):** A shortcut that moves you "up" or back one level to the parent folder.
+* **Ubuntu /bin Folder:** A "utility closet" containing the fundamental binary programs required for the system's basic survival and commands.
+    
+* **UV:** An incredibly fast "delivery service" (package manager) used to install and manage Python tools and environments.
+    
+* **LLM (CLI tool):** A terminal-based "walkie-talkie" that lets you send prompts to AI models and get responses without a browser.
+    
+* **API:** A secure "digital keycard" (API Key) that proves you have permission to access and use cloud-based AI brains like Gemini.
+
+---
