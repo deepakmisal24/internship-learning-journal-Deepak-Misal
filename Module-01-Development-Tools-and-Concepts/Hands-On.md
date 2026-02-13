@@ -265,3 +265,75 @@ Your Gemini API is now configured! You can test it by asking a question directly
 llm -m gemini-2.5-flash "Hello, how are you?"
 ```
 ---
+
+# 🛠️ Hands-On: Github CLI and Python Environment
+**Chapter 1 | Week 1 | Session 4**
+
+This practical session covers the installation of the UV package manager, setting up the Github CLI tool, authomation of Github. 
+---
+
+## **Part 1: Automatic Github Environment setup**
+The `uv init` command is the "Big Bang" for your Python projects. It is a scaffolding tool that sets up a professional, clean project structure in milliseconds, ensuring you follow best practices from the very first second.
+
+### **📦 What is Created?**
+When you run `uv init` inside a folder, it generates four essential files:
+
+* **`pyproject.toml`**: The "Brain." This file stores your project metadata (name, version) and tracks all the libraries you install.
+* **`.gitignore`**: The "Filter." It automatically tells Git to ignore junk files like your virtual environment (`.venv`) and Python cache.
+* **`hello.py`**: The "Starter." A simple "Hello World" script so you can verify everything is working immediately.
+* **`.python-version`**: The "Anchor." It tells `uv` exactly which version of Python should be used for this project to ensure consistency.
+
+---
+
+## **Part 2: 🛠️ GitHub CLI (`gh`) Command List**
+
+The GitHub CLI allows you to manage your repositories without leaving the terminal. It is significantly faster than using the web interface for creating and managing projects.
+
+---
+
+### **1. Authentication**
+Before you can use `gh`, you must link your terminal to your GitHub account.
+* **Command:** `gh auth login`
+* **Workflow:** 1. Select `GitHub.com`.
+    2. Choose `HTTPS`.
+    3. Select `Yes` to authenticate with your GitHub credentials.
+    4. Choose `Login with a web browser` and paste the one-time code provided.
+
+---
+
+### **2. Creating a Remote Repository**
+Instead of creating a repo on the website and then cloning it, you can create it directly from your local project folder.
+* **Command:** `gh repo create`
+* **Example Workflow:**
+    ```bash
+    git init
+    git add .
+    git commit -m "initial commit"
+    
+    # Now use GH to push to the cloud
+    gh repo create my-repo-name --public --source=. --remote=origin --push
+    ```
+
+* **Interactive Choices:** It will ask if you want to push the current folder to GitHub, set the name, and whether it should be `Public` or `Private`.
+
+---
+
+### **3. Opening Your Project Online**
+If you need to check your Actions, Issues, or look at your code on the web:
+* **Command:** `gh repo view --web`
+* **Effect:** Instantly opens the current repository's GitHub page in your default browser.
+
+---
+
+### **4. Standard Git Integration**
+These commands are often used right before or after the `gh` commands to manage your local code:
+
+| Command | Purpose |
+| :--- | :--- |
+| `git init` | Starts a new Git project locally. |
+| `git add .` | "Stages" all your files to be saved. |
+| `git commit -m "message"` | Saves a snapshot of your code locally. |
+| `git status` | Shows which files are changed but not yet saved. |
+
+---
+

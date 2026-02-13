@@ -131,3 +131,23 @@ This session bridges the gap between your local computer and the cloud by establ
 * **API:** A secure "digital keycard" (API Key) that proves you have permission to access and use cloud-based AI brains like Gemini.
 
 ---
+
+# **🛠️ Chapter 4: Essential Developer Tools: Homebrew, pyenv, uv, and GitHub CLI**
+**Chapter 1 | Week 1 | Session 3**
+
+This guide covers the fundamental tools required to manage software, Python versions, and project automation directly from your terminal.
+
+* **Homebrew:** A terminal-based "app store" for macOS and Linux that lets you install and manage developer tools with simple commands.
+    
+* **`uv init project_name`:** A command that instantly scaffolds a professional Python project structure, including a `README.md` and a pre-configured `.gitignore`.
+    
+* **`.gitignore`:** A text file that acts as a "security filter," telling Git which files (like private API keys or large environment folders) should never be uploaded to GitHub.
+* **`pyproject.toml`:** The central "brain" or configuration file of a Python project that lists its metadata and all the library requirements.
+    
+* **`pyenv`:** A "time machine" for Python that allows you to install and switch between multiple versions of the Python engine on a single computer.
+    
+* **Managing Dependencies:** The process of using tools like `uv add` or `uv remove` to track and isolate the external libraries your project needs to function.
+
+* **GitHub CLI:** A powerful tool that lets you create repositories, handle pull requests, and manage your GitHub account entirely from the command line.
+
+---
