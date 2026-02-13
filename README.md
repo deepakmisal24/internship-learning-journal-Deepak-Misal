@@ -1,8 +1,12 @@
 # Internship Learning Journal  
 **Name:** DEEPAK MISAL 
+
 **USN:** 2BL22CI016
+
 **GitHub Username:** deepakmisal24  
+
 **Department:** CSE-AIML 
+
 **Internship Start Date:** 03-02-2026
 
 ---
@@ -14,7 +18,7 @@ All notes, assignments, and project learnings are organized module-wise and chap
 ---
 
 ## 🗂 Course Reference
-Course Link: https://tds.s-anand.net/#/
+Course Link: [https://tds.s-anand.net/#/](https://tds.s-anand.net/2025-09/)
 
 ---
 
