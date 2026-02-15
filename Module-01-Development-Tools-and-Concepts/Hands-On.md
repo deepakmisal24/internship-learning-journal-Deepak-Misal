@@ -176,6 +176,7 @@ git push -u origin main
 * **Main:** The default name of your primary development branch.
 
 ---
+---
 
 # 🛠️ Hands-On: UV installation and gemini api setup
 **Chapter 1 | Week 1 | Session 3**
@@ -265,6 +266,7 @@ Your Gemini API is now configured! You can test it by asking a question directly
 llm -m gemini-2.5-flash "Hello, how are you?"
 ```
 ---
+---
 
 # 🛠️ Hands-On: Github CLI and Python Environment
 **Chapter 1 | Week 1 | Session 4**
@@ -336,4 +338,81 @@ These commands are often used right before or after the `gh` commands to manage 
 | `git status` | Shows which files are changed but not yet saved. |
 
 ---
+---
 
+# 🔐 Hands-On: GitHub SSH Setup Guide (Ubuntu WSL)
+**Chapter 1 | Week 1 | Session 5**
+
+Using SSH (Secure Shell) allows you to securely communicate with GitHub without entering your password or token every time you push code.
+
+Refer this link for stepup process [!SSH_setup](https://github.com/Jivraj-18/live-sessions-tds-09-2025/blob/main/git-setup-24-09-2025.md)
+---
+
+### **Step 1: Generate a New SSH Key**
+Open your Ubuntu WSL terminal and run the following command. Replace the email with your actual GitHub email address.
+
+```bash
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+* **File Location:** When prompted to "Enter a file in which to save the key," simply press **Enter** (it will save to `~/.ssh/id_ed25519`).
+* **Passphrase:** Press **Enter** twice for no passphrase (convenient) or type a secret password for extra security.
+
+
+### **Step 2: Start the SSH Agent**
+The SSH agent is a background process that holds your keys so you don't have to re-enter passphrases manually every time you use them.
+
+
+
+```bash
+# Start the agent
+eval "$(ssh-agent -s)"
+
+# Add your private key to the agent
+ssh-add ~/.ssh/id_ed25519
+```
+
+### **Step 3: Add the Public Key to GitHub**
+You need to provide GitHub with your **Public Key** so it can recognize your computer.
+
+
+1. **Display and Copy the key:**
+```bash
+   cat ~/.ssh/id_ed25519.pub
+```
+2. **Go to GitHub:**
+    * Log in to **[GitHub.com](https://github.com)**.
+    * Go to **Settings** (top right profile icon).
+    * Click **SSH and GPG keys** in the left sidebar.
+    * Click the green **New SSH Key** button.
+
+
+
+* **Paste the Key:**
+    * **Title:** Give it a name like "My WSL Ubuntu".
+    * **Key:** Paste the text you copied from your terminal.
+    * Click **Add SSH Key**.
+
+---
+
+### **Step 4: Test the Connection**
+Finally, verify that Ubuntu can talk to GitHub:
+
+```bash
+ssh -T git@github.com
+```
+
+Note: If it asks "Are you sure you want to continue connecting?", type yes and press Enter.
+
+    Success: You should see: "Hi [YourUsername]! You've successfully authenticated..."
+
+💡 **Pro Tip:** Update Your Remote URL
+
+If you previously cloned a repository using HTTPS, you need to switch it to SSH to stop it from asking for a password:
+Bash
+
+# Check current URL
+git remote -v
+
+# Change to SSH (Replace <user>/<repo> with yours)
+git remote set-url origin git@github.com:<user>/<repo>.git
