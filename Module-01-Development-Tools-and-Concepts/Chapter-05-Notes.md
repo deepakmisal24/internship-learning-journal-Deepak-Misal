@@ -1,4 +1,4 @@
-https://github.com/Jivraj-18/live-sessions-tds-09-2025/blob/main/git-setup-24-09-2025.md
+
 # **🛠️ Chapter 5: Git & GitHub Ecosystem**
 **Chapter 1 | Week 1 | Session 5**
 

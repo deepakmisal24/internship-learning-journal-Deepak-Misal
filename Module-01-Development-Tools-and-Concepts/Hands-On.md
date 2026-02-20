@@ -345,7 +345,7 @@ These commands are often used right before or after the `gh` commands to manage 
 
 Using SSH (Secure Shell) allows you to securely communicate with GitHub without entering your password or token every time you push code.
 
-Refer this link for stepup process [!SSH_setup](https://github.com/Jivraj-18/live-sessions-tds-09-2025/blob/main/git-setup-24-09-2025.md)
+Refer this link for stepup process [SSH setup](https://github.com/Jivraj-18/live-sessions-tds-09-2025/blob/main/git-setup-24-09-2025.md)
 ---
 
 ### **Step 1: Generate a New SSH Key**
