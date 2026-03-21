@@ -39,3 +39,31 @@ The following table summarizes the most common commands used to manage projects 
 | `vercel remove <name>` | Permanently delete a project and its associated deployments from Vercel. |
 
 ---
+
+# **Quick Reference: Github and hugging face space, Github Automation**
+**Week 2 | Session 3**
+
+* **GitHub Codespaces:** A cloud-hosted development environment that provides a fully configured Linux container in your browser or VS Code to ensure consistent toolchains across a team.
+
+* **devcontainer.json:** A configuration file that tells GitHub exactly how to build your development environment, specifying the base image, tools, extensions, and automated setup commands.
+
+* **Hugging Face:** The leading community platform and library for AI, acting as the "GitHub of Machine Learning" for hosting pre-trained models and datasets.
+
+* **Hugging Face Spaces (SDK Options):** A hosting service for ML demos that provides specific software kits—Gradio, Streamlit, Static HTML, or Docker—to build and share interactive AI applications.
+
+* **GitHub Automation (Actions):** A workflow engine that uses YAML scripts to automate repetitive developer tasks, such as running tests, building containers, or deploying apps every time you push code.
+
+---
+
+# **Quick Reference: Github and hugging face space, Github Automation**
+**Week 2 | Session 4**
+
+* **FastAPI:** A high-performance Python framework that uses type hints to build APIs with automatic validation and interactive documentation.
+
+* **GET Request:** A read-only HTTP method used to retrieve data from a server via path or query parameters in the URL.
+
+* **POST Request:** An HTTP method used to send data to a server, typically in a JSON body, to create or update resources.
+
+* **FastAPI Response Model:** A Pydantic schema used to filter sensitive data, validate outgoing information, and automatically serialize Python objects into JSON.
+
+---

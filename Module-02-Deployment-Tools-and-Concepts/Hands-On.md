@@ -236,3 +236,122 @@ Once the preview is ready, push your project to the live production environment:
 
 vercel --prod
 ```
+
+---
+
+# **Github and huggingface Codespace set-up**
+**Week 2 | Session 3**
+
+## 1. GitHub Codespaces Setup
+### Quick Setup Options
+* **From the GitHub UI:** Go to your repository and click **Code** → **Codespaces** → **New codespace**. Pick the branch and machine specs (2–32 cores, 8–64 GB RAM), then click **Create codespace**.
+* **In Visual Studio Code:** Press `Ctrl+Shift+P`, choose `Codespaces: Create New Codespace`, and follow the prompts.
+* **Via GitHub CLI:**
+    ```bash
+    gh auth login
+    gh codespace create --repo OWNER/REPO
+    gh codespace list    # List all codespaces
+    gh codespace code    # Open in your local VS Code
+    gh codespace ssh     # SSH into the codespace
+    ```
+
+## 2. devcontainer.json
+The `.devcontainer/devcontainer.json` file is the configuration heart of your codespace. It tells GitHub exactly how to build your development environment.
+
+* **Key Attributes:**
+    * **`image` or `dockerFile`**: Defines the base OS or custom Docker image to use.
+    * **`features`**: Installs common tools (like Node.js, Python, or Docker-in-Docker) with a single line.
+    * **`postCreateCommand`**: A shell command (e.g., `pip install -r requirements.txt`) that runs automatically once the container is created.
+    * **`forwardPorts`**: Maps ports from the cloud machine to your local browser so you can preview apps.
+
+## 3. Hugging Face Spaces
+Spaces allow you to host ML demo apps for free. When initializing a Space, you must choose an SDK based on your project:
+* **Gradio (Default):** The fastest way to build an interface for an ML model using only Python.
+* **Streamlit:** A Python library for creating complex, interactive data dashboards.
+* **Static HTML:** For hosting simple, front-end only interfaces.
+* **Docker:** The most flexible option; allows you to provide a custom `Dockerfile` to run any language or complex environment.
+
+### Setting up a Space
+1. Visit [huggingface.co/new-space](https://huggingface.co/new-space).
+2. Fill up the **Name** and **License**.
+3. Select the **Space SDK** (Gradio, Streamlit, Static, or Docker).
+4. Select the **Space Hardware** (CPU/GPU options).
+5. Click **Create Space**.
+
+### Manual Deployment Process
+1. **Clone Repository:** `git clone https://huggingface.co/spaces/your-username/your-space-name`
+2. **Add Files:** Create your application files in your local repository.
+3. **Deploy:**
+    ```bash
+    git add .
+    git commit -m "Initial deployment"
+    git push
+    ```
+
+---
+
+## 4. GitHub Actions
+**GitHub Actions** is a platform to automate your software development workflow. It allows you to run scripts automatically based on repository triggers like a `push` or a `pull_request`.
+
+
+
+## 5. Use Cases (CI/CD)
+GitHub Actions is primarily used for:
+* **Continuous Integration (CI):** Every time you push code, Actions can run your unit tests and linting to ensure no bugs are introduced.
+* **Continuous Deployment (CD):** Automatically push your updated code and model weights to Hugging Face Spaces as soon as they pass tests.
+
+### **Workflow setup**
+Create a file at `.github/workflow/deploy.yml`
+
+```yaml
+name: Sync to Hugging Face
+on:
+  push:
+    branches: [main]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          lfs: true
+      - name: Push to HF
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: git push --force https://USERNAME:$HF_TOKEN@huggingface.co/spaces/USERNAME/SPACE_NAME main
+```
+
+---
+
+# **FastAPI set-up**
+**Week 2 | Session 4**
+
+## 1. Installation
+```bash
+# Create project folder
+mkdir FastAPI_Project
+cd FastAPI_Project
+
+# Setup Virtual Environment
+python -m venv venv
+source venv\Scripts\activate
+
+# Install core packages
+pip install fastapi uvicorn python-multipart
+
+```
+## 2. Running the Server
+```bash
+uvicorn app:app --reload
+```
+
+* main: The filename (main.py).
+
+* app: The FastAPI instance variable inside the file.
+
+* --reload: Automatically restarts the server on code changes.
+1. Right-click on the port link `http://127.0.0.1:8000`
+2. To check the changes and run the program`http://127.0.0.1:8000/docs`
+
+![app.py](Airowire-Internship\FastAPI\venv\app.py)

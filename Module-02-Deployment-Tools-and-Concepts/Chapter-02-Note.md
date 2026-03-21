@@ -1,9 +1,3 @@
-github pages
-fast.api
-fastapi vs flask
-uvicorn
-vercel
-
 # Modern Web Deployment: Frameworks & Platforms
 
 This guide explains the essential stack for building, serving, and deploying modern Python web applications and static sites.
